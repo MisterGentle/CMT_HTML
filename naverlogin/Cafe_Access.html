@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>네이버 로그인 및 카페 접속</title>
+<script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+
+</head>
+<body>
+    카페 접속
+<!-- 네이버 로그인 버튼 노출 영역 -->
+<div id="naver_id_login"></div>
+<!-- //네이버 로그인 버튼 노출 영역 -->
+<script type="text/javascript">
+    var naver_id_login = new naver_id_login("gslocTfIk6Ma40Mjs2F7", "http://127.0.0.1:5501/naverlogin/callback.html");
+    var state = naver_id_login.getUniqState();
+    naver_id_login.setButton("white", 2, 40);
+    naver_id_login.setDomain("http://127.0.0.1:5501/login");
+    naver_id_login.setState(state);
+    naver_id_login.setPopup();
+    naver_id_login.init_naver_id_login();
+
+</script>
+</body>
+<body>
+    카카오 지도
+	<div id="map" style="width:500px;height:400px;"></div>
+	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=c3b925fc5dcb97e70c5660e65ccd7516"></script>
+	<script>
+		var container = document.getElementById('map');
+		var options = {
+			center: new kakao.maps.LatLng(33.450701, 126.570667),
+			level: 3
+		};
+
+		var map = new kakao.maps.Map(container, options);
+	</script>
+</body>
+</html>
